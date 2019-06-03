@@ -120,6 +120,41 @@
           }
         }
       }
+    },
+    "ng-json-schema-generator": {
+      "projectType": "library",
+      "root": "projects/ng-json-schema-generator",
+      "sourceRoot": "projects/ng-json-schema-generator/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-json-schema-generator/tsconfig.lib.json",
+            "project": "projects/ng-json-schema-generator/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-json-schema-generator/src/test.ts",
+            "tsConfig": "projects/ng-json-schema-generator/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-json-schema-generator/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-json-schema-generator/tsconfig.lib.json",
+              "projects/ng-json-schema-generator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-json-schema-project"

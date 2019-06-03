@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-json-schema-generator": [
+        "dist/ng-json-schema-generator"
+      ],
+      "ng-json-schema-generator/*": [
+        "dist/ng-json-schema-generator/*"
+      ]
+    }
   }
 }
